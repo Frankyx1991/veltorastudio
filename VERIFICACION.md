@@ -26,3 +26,13 @@ El script scripts/Configurar-Web-VeltoraStudio.ps1 guarda una copia en el PC, co
 El archivo de AdMob en la raíz del dominio devuelve 404 tras eliminar el repositorio anterior. El nuevo proyecto contiene app-ads.txt en su propia ruta y los dos archivos mínimos de infrastructure/domain-root/ para restaurar la raíz. No se presenta el archivo de proyecto como sustituto de https://frankyx1991.github.io/app-ads.txt ni se afirma que AdMob esté verificado.
 
 No se modifica EvoPuzzle, no se exporta un AAB y no se prueba Android en esta tarea de web.
+
+## Preparación de Cloudflare Pages — 26/10/2026
+
+Se mantiene exclusivamente Frankyx1991/veltorastudio. El usuario ha conectado ese repositorio en Cloudflare y ha llegado a la configuración de publicación; todavía no se ha observado un despliegue terminado.
+
+Nuevo constructor: `python scripts/build_cloudflare.py`, salida `dist`, web prevista `https://veltorastudio.pages.dev/`. Genera el catálogo en la raíz, copia solo recursos públicos y selecciona la información de privacidad del proveedor. La configuración JSON y los HTML de GitHub Pages permanecen iguales al ejecutar su constructor habitual.
+
+Comprobaciones locales: ejecución de ambos constructores, siete HTML con un H1 e identificadores únicos, 151 enlaces/recursos/anclas resueltos, fuente de CSS, sitemap XML, robots, privacidad de Cloudflare y contenido de app-ads.txt. La salida excluye scripts, datos de configuración e historial Git. PowerShell actualizado para comprobar Cloudflare sin crear repositorios; no ejecutado en Windows.
+
+Pendiente: Save and Deploy en la cuenta de Cloudflare del usuario, confirmar la dirección pública, actualizar la web del desarrollador en Google Play y solicitar la comprobación en AdMob. No se afirma que Google haya verificado el archivo.

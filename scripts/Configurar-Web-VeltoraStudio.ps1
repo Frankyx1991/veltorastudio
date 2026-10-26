@@ -66,7 +66,7 @@ try {
         Write-Host "Ajustes de publicacion: $veltoraSettings"
     }
 
-    $veltoraRootAds = 'https://frankyx1991.github.io/app-ads.txt'
+    $veltoraRootAds = 'https://veltorastudio.pages.dev/app-ads.txt'
     try {
         $veltoraAds = Invoke-WebRequest -Uri $veltoraRootAds -UseBasicParsing -TimeoutSec 12
         if ($veltoraAds.StatusCode -ne 200 -or $veltoraAds.Content.Trim() -ne 'google.com, pub-1246957925783081, DIRECT, f08c47fec0942fa0') {
@@ -74,8 +74,8 @@ try {
         }
         Write-Host 'app-ads.txt disponible en la raiz del dominio.' -ForegroundColor Green
     } catch {
-        Write-Host "AdMob: falta restaurar el archivo en $veltoraRootAds" -ForegroundColor Yellow
-        Write-Host 'El nuevo repositorio incluye el archivo y una carpeta infrastructure/domain-root preparada para esa ruta.'
+        Write-Host "AdMob: no se ha confirmado el archivo en $veltoraRootAds" -ForegroundColor Yellow
+        Write-Host 'Publica este mismo repositorio en Cloudflare Pages con el constructor indicado en README.md.'
     }
 } catch {
     Write-Host ('PROCESO DETENIDO: ' + $_.Exception.Message) -ForegroundColor Red
