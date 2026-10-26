@@ -1,0 +1,63 @@
+[
+  {
+    "slug": "evopuzzle",
+    "name": "EvoPuzzle",
+    "category": "juegos",
+    "status": "En prueba cerrada",
+    "platform": "Android",
+    "genre": "Puzles",
+    "tagline": "Cada número abre una nueva posibilidad.",
+    "description": "Desliza, combina fichas y supera retos mientras desarrollas tu propio avatar. Una aventura de números con su propia personalidad.",
+    "cover": "evopuzzle-cover.webp",
+    "screenshots": [
+      {
+        "file": "evopuzzle-play.webp",
+        "alt": "Partida de EvoPuzzle con fichas numéricas y control por deslizamiento",
+        "caption": "Desliza y combina. El siguiente movimiento es tuyo."
+      },
+      {
+        "file": "evopuzzle-home.webp",
+        "alt": "Menú de EvoPuzzle con su avatar, colección y accesos a ayuda y ajustes",
+        "caption": "Tu avatar, tu colección y tu próxima aventura."
+      }
+    ],
+    "features": [
+      {
+        "title": "Un movimiento. Nuevas opciones.",
+        "text": "Desliza el dedo sobre el tablero para combinar fichas iguales y avanzar hacia el objetivo."
+      },
+      {
+        "title": "Un avatar que va contigo.",
+        "text": "Desarrolla tu compañero y personaliza su apariencia con aspectos y accesorios."
+      },
+      {
+        "title": "Tres formas de entrar en juego.",
+        "text": "Explora Aventura, Clásico y Reto, cada uno con sus propias condiciones."
+      },
+      {
+        "title": "Aprende cuando lo necesitas.",
+        "text": "Las prácticas guiadas explican los nuevos obstáculos cuando aparecen en tu recorrido."
+      }
+    ],
+    "privacy_url": "https://evopuzzle-privacidad-veltorastudio.franky91-91.chatgpt.site/",
+    "deletion_url": "https://evopuzzle-privacidad-veltorastudio.franky91-91.chatgpt.site/eliminar-datos/",
+    "support_subject": "Asistencia EvoPuzzle",
+    "test_subject": "Participar en las pruebas de EvoPuzzle",
+    "theme": "Avatares",
+    "access_notice": "EvoPuzzle está en prueba cerrada. La participación requiere inscripción y depende de la disponibilidad del programa.",
+    "faq": [
+      {
+        "question": "¿Necesito crear una cuenta?",
+        "answer": "Puedes jugar sin iniciar sesión. Las funciones opcionales de cuenta se explican dentro del juego cuando están disponibles."
+      },
+      {
+        "question": "¿Incluye anuncios o compras?",
+        "answer": "El juego incluye anuncios y compras opcionales. Las suscripciones válidas permiten quitar la publicidad. Google Play muestra los precios y condiciones antes de comprar."
+      },
+      {
+        "question": "¿Cómo entro en las pruebas?",
+        "answer": "Escríbenos desde el botón de acceso a las pruebas. Si hay plazas disponibles, te indicaremos los pasos para inscribirte en Google Play."
+      }
+    ]
+  }
+]
