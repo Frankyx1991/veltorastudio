@@ -19,7 +19,7 @@ EvoPuzzle figura en prueba cerrada y la sección de aplicaciones informa de que 
 
 ## Publicación y límites
 
-Al iniciar el trabajo, el nuevo repositorio contiene solo README y GitHub Pages devuelve 404. La interfaz de administración de Pages pide una sesión de GitHub en el navegador, separada del acceso del conector a los archivos. La publicación solo debe comunicarse como completada después de comprobar la página pública.
+Al iniciar el trabajo, el nuevo repositorio contenía solo README y GitHub Pages devolvía 404. Tras subir el portal a main, la comprobación final del 26/10/2026 devuelve HTTP 200 en https://frankyx1991.github.io/veltorastudio/ y confirma el marcador gamer-20261026-1. La página pública se abre y se verifica visualmente en el navegador. No ha sido necesario completar el inicio de sesión del navegador para esta comprobación pública.
 
 El script scripts/Configurar-Web-VeltoraStudio.ps1 guarda una copia en el PC, comprueba la identidad del repositorio, abre Settings/Pages si hace falta y verifica el marcador del sitio. La elección inicial de main y / (root) se hace en la interfaz de GitHub. El script no modifica el juego ni requiere claves incrustadas.
 
