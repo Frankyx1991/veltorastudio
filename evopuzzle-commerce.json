@@ -1,7 +1,8 @@
 {
   "schema": 1,
   "package_name": "com.franky.evopuzzle",
-  "revision": 1,
+  "revision": 2,
   "billing_enabled": false,
-  "verification_url": ""
+  "verification_url": "",
+  "ads_test_mode": true
 }
