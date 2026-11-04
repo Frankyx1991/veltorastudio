@@ -12,7 +12,12 @@ CATALOG = json.loads((ROOT / 'data/catalog.json').read_text(encoding='utf-8'))
 BASE = STUDIO['base_path']
 PUBLIC = STUDIO['site_url']
 MAIL = STUDIO['email']
-PRIVACY = 'https://evopuzzle-privacidad-veltorastudio.franky91-91.chatgpt.site/'
+POLICIES = {
+    'privacy': ('privacidad', 'Política de privacidad'),
+    'cancellation': ('cancelacion', 'Suscripciones, cancelación y reembolsos'),
+    'deletion': ('eliminar-datos', 'Eliminar cuenta o datos'),
+    'terms': ('terminos', 'Términos del Servicio'),
+}
 
 
 def e(value):
@@ -56,8 +61,31 @@ def tags(item):
     return '<div class="tags">' + ''.join(f'<span>{e(value)}</span>' for value in values) + '</div>'
 
 
+def product_path(item):
+    return item['category'] + '/' + item['slug'] + '/'
+
+
 def product_url(item):
-    return BASE + item['category'] + '/' + item['slug'] + '/'
+    return BASE + product_path(item)
+
+
+def policy_url(item, key):
+    if key in item.get('documents', {}):
+        return product_url(item) + POLICIES[key][0] + '/'
+    return item.get(key + '_url')
+
+
+def resource_list(item):
+    resources = [(mail(item['support_subject']), 'Escribir a soporte')]
+    resources.extend((policy_url(item, key), label) for key, (_, label) in POLICIES.items())
+    links = ''.join(f'<a class="resource-link" href="{e(url)}">{e(label)}<span aria-hidden="true">↗</span></a>'
+                    for url, label in resources if url)
+    return f'<div class="resource-list">{links}</div>'
+
+
+def is_https_url(value):
+    parts = urlsplit(value)
+    return parts.scheme == 'https' and bool(parts.hostname) and parts.username is None
 
 
 def card(item, featured=False):
@@ -77,9 +105,20 @@ def validate():
         key = item['category'] + '/' + item['slug']
         assert key not in seen, 'Producto duplicado'
         seen.add(key)
-        for field in ['privacy_url', 'deletion_url']:
+        documents = item.get('documents', {})
+        assert documents.keys() <= POLICIES.keys(), 'Tipo de documento desconocido'
+        assert policy_url(item, 'privacy'), f'Falta la política de privacidad de {key}'
+        for policy in POLICIES:
+            field = policy + '_url'
             if item.get(field):
-                assert urlsplit(item[field]).scheme == 'https', field
+                assert is_https_url(item[field]), field
+                assert policy not in documents, f'{key}: define una sola fuente para {policy}'
+        for policy, sections in documents.items():
+            assert sections, f'{key}: documento {policy} vacío'
+            for section in sections:
+                assert section['title'].strip() and section['paragraphs'], f'{key}: sección incompleta'
+                for link in section.get('links', []):
+                    assert link['label'].strip() and is_https_url(link['url']), link['url']
         for name in [item['cover']] + [shot['file'] for shot in item.get('screenshots', [])]:
             assert Path(name).name == name and (ROOT / 'assets' / name).is_file(), name
 
@@ -116,16 +155,32 @@ def product(item):
     features = ''.join(f'<li><span>0{index+1} /</span><h3>{e(feature["title"])}</h3><p>{e(feature["text"])}</p></li>' for index, feature in enumerate(item.get('features', [])))
     shots = ''.join(f'<figure><img src="{BASE}assets/{e(shot["file"])}" alt="{e(shot["alt"])}" loading="lazy"><figcaption>{e(shot["caption"])}</figcaption></figure>' for shot in item.get('screenshots', []))
     faq_html = ''.join(f'<details><summary>{e(entry["question"])}</summary><p>{e(entry["answer"])}</p></details>' for entry in item.get('faq', []))
-    resources = [(mail(item['support_subject']), 'Escribir a soporte'), (item['privacy_url'], 'Política de privacidad'), (item['deletion_url'], 'Eliminar cuenta o datos')]
-    links = ''.join(f'<a class="resource-link" href="{e(url)}">{e(text)}<span aria-hidden="true">↗</span></a>' for url, text in resources if url)
     experience_title = "Descubre cómo se juega." if item["category"] == "juegos" else "Descubre qué puedes hacer."
-    body = crumb(item['name'], (item['category']+'/', item['category'].capitalize())) + f'''<div class="wrap"><section class="product-hero"><div><span class="badge">{e(item['status'])} / {e(item['platform'])}</span><h1>{e(item['name'])}</h1><p class="tagline">{e(item['tagline'])}</p><p class="lead">{e(item['description'])}</p>{tags(item)}<div class="actions">{action}</div><p class="fine">{e(notice)}</p></div><div class="product-visual"><img src="{BASE}assets/{e(item['cover'])}" width="675" height="1200" alt="Portada de {e(item['name'])}"></div></section><section class="section" style="padding-top:0" aria-labelledby="experience-title"><div class="eyebrow">DENTRO DE LA EXPERIENCIA</div><h2 id="experience-title">{experience_title}</h2><ul class="feature-list">{features}</ul><div class="gallery">{shots}</div></section><section class="help-grid" id="soporte"><div><h2>Antes de empezar.</h2>{faq_html}</div><div><h2>Estamos en tu equipo.</h2><p>Utiliza su apartado de asistencia o cuéntanos qué ha pasado. También puedes consultar su política y solicitar la eliminación de tus datos.</p><div class="resource-list">{links}</div></div></section></div>'''
-    page(item['category']+'/'+item['slug']+'/index.html', item['name'], item['description'], body, item['category'])
+    body = crumb(item['name'], (item['category']+'/', item['category'].capitalize())) + f'''<div class="wrap"><section class="product-hero"><div><span class="badge">{e(item['status'])} / {e(item['platform'])}</span><h1>{e(item['name'])}</h1><p class="tagline">{e(item['tagline'])}</p><p class="lead">{e(item['description'])}</p>{tags(item)}<div class="actions">{action}</div><p class="fine">{e(notice)}</p></div><div class="product-visual"><img src="{BASE}assets/{e(item['cover'])}" width="675" height="1200" alt="Portada de {e(item['name'])}"></div></section><section class="section" style="padding-top:0" aria-labelledby="experience-title"><div class="eyebrow">DENTRO DE LA EXPERIENCIA</div><h2 id="experience-title">{experience_title}</h2><ul class="feature-list">{features}</ul><div class="gallery">{shots}</div></section><section class="help-grid" id="soporte"><div><h2>Antes de empezar.</h2>{faq_html}</div><div><h2>Soporte y políticas</h2><p>Consulta la información de {e(item['name'])} o cuéntanos qué ha pasado.</p>{resource_list(item)}</div></section></div>'''
+    page(product_path(item) + 'index.html', item['name'], item['description'], body, item['category'])
+
+
+def policy_page(item, key, sections):
+    slug, label = POLICIES[key]
+    title = f'{label} de {item["name"]}'
+    body = crumb(label, (product_path(item), item['name'])) + f'''<div class="wrap"><section class="page-intro"><div class="eyebrow">{e(item['name'])}</div><h1>{e(label)}</h1></section><article class="prose">'''
+    for section in sections:
+        body += f'<h2>{e(section["title"])}</h2>'
+        body += ''.join(f'<p>{e(paragraph)}</p>' for paragraph in section['paragraphs'])
+        body += ''.join(f'<p><a href="{e(link["url"])}">{e(link["label"])}</a></p>'
+                        for link in section.get('links', []))
+    body += f'<div class="actions">{button(product_url(item) + "#soporte", "VOLVER AL SOPORTE DE " + item["name"].upper())}</div></article></div>'
+    page(product_path(item) + slug + '/index.html', title, title + ' · Veltora Studio', body, item['category'])
 
 
 def contact():
-    body = crumb('Contacto') + f'''<div class="wrap"><section class="page-intro"><div class="eyebrow">ABRIMOS CONVERSACIÓN</div><h1>HAY UNA PERSONA<br>AL OTRO LADO.</h1><p class="lead">Una idea, una consulta o una partida que se ha quedado a medias. Elige el motivo y abrimos tu correo con la dirección preparada.</p></section><section class="contact-grid" aria-label="Opciones de contacto"><article class="contact-card"><div class="section-id">01 / EL ESTUDIO</div><h2>¿Qué tienes en mente?</h2><p>Para consultas generales sobre Veltora Studio, sus juegos y sus próximas aplicaciones.</p><div class="actions">{button(mail('Consulta para Veltora Studio'), 'ESCRIBIR AL ESTUDIO', True)}</div></article><article class="contact-card"><div class="section-id">02 / SOPORTE EVOPUZZLE</div><h2>Vamos a resolverlo.</h2><p>Indica qué ocurrió y qué versión del juego utilizas. También tienes asistencia dentro de EvoPuzzle.</p><div class="actions">{button(mail('Asistencia EvoPuzzle'), 'PEDIR AYUDA CON EL JUEGO')}</div></article><div><p class="fine">Puedes copiar nuestra dirección:</p><a class="contact-email" href="mailto:{MAIL}">{MAIL}</a></div></section></div>'''
-    page('contacto/index.html', 'Contacto y soporte', 'Contacta con Veltora Studio y solicita ayuda o acceso a las pruebas de EvoPuzzle.', body, 'contacto')
+    product_cards = ''.join(
+        f'<article class="contact-card"><div class="section-id">{e(item["category"].upper())} / {e(item["platform"])}</div>'
+        f'<h2><a href="{product_url(item)}">{e(item["name"])}</a></h2>{resource_list(item)}</article>'
+        for item in CATALOG
+    )
+    body = crumb('Contacto y soporte') + f'''<div class="wrap"><section class="page-intro"><div class="eyebrow">VELTORA STUDIO</div><h1>SOPORTE Y<br>POLÍTICAS.</h1><p class="lead">Elige un juego o una aplicación para encontrar su ayuda, sus opciones de privacidad y la información sobre compras cuando corresponda.</p></section><section class="contact-grid" aria-label="Soporte y políticas por producto">{product_cards}<article class="contact-card"><div class="section-id">EL ESTUDIO</div><h2>Contacto general</h2><p>Para consultas sobre Veltora Studio y sus próximos lanzamientos.</p><div class="actions">{button(mail('Consulta para Veltora Studio'), 'ESCRIBIR AL ESTUDIO', True)}</div><a class="contact-email" href="mailto:{MAIL}">{MAIL}</a></article></section></div>'''
+    page('contacto/index.html', 'Soporte y políticas', 'Soporte, privacidad, suscripciones y condiciones de los juegos y aplicaciones de Veltora Studio.', body, 'contacto')
 
 
 def privacy():
@@ -137,7 +192,11 @@ def privacy():
                'incluida la dirección IP, para proteger su servicio. Consulta su '
                '<a href="https://docs.github.com/es/site-policy/privacy-policies/github-general-privacy-statement">'
                'declaración de privacidad</a>.</p>')
-    policy_links = ''.join(f'<p><strong>{e(item["name"])}</strong>: <a href="{e(item["privacy_url"])}">política de privacidad</a> · <a href="{e(item["deletion_url"])}">eliminar cuenta o datos</a>.</p>' for item in CATALOG)
+    policy_links = ''
+    for item in CATALOG:
+        links = ' · '.join(f'<a href="{e(url)}">{e(POLICIES[key][1].lower())}</a>'
+                           for key in ('privacy', 'deletion') if (url := policy_url(item, key)))
+        policy_links += f'<p><strong>{e(item["name"])}</strong>: {links}.</p>'
     body = crumb('Privacidad') + f'''<div class="wrap"><section class="page-intro"><div class="eyebrow">INFORMACIÓN CLARA</div><h1>TU PRIVACIDAD<br>TIENE SU ESPACIO.</h1><p class="lead">Cada juego y aplicación tiene sus propios enlaces legales. Aquí te explicamos el uso de la web de Veltora Studio.</p></section><article class="prose"><h2>La web del estudio</h2><p>Esta web es informativa. No incorpora cuentas, compras, formularios para recoger datos, anuncios, herramientas de analítica ni cookies propias. Los recursos y tipografías se sirven desde el mismo sitio, sin proveedores externos de fuentes.</p>{hosting}<h2>Si nos escribes</h2><p>Los botones de contacto abren tu aplicación de correo. Tú decides si envías el mensaje. Utilizamos la dirección y el contenido que facilites para atender tu consulta. Evita enviar contraseñas, datos de pago u otra información innecesaria.</p><p>Responsable: Francisco Javier Ruiz Vidal, Veltora Studio, España. Contacto: <a href="mailto:{MAIL}">{MAIL}</a>.</p><h2>Juegos y aplicaciones</h2>{policy_links}<p>La política de cada producto describe sus funciones y servicios, incluidos anuncios, compras y cuentas cuando corresponda. La información de la web no sustituye esas políticas.</p><h2>Próximos lanzamientos</h2><p>Cada nuevo producto incluirá sus propios enlaces de soporte, privacidad y eliminación de datos en su ficha.</p><p>Última actualización: 26 de octubre de 2026.</p></article></div>'''
     page('privacidad/index.html', 'Privacidad', 'Privacidad de la web de Veltora Studio y enlaces de datos de sus juegos y aplicaciones.', body)
 
@@ -149,10 +208,15 @@ def main():
     catalog('aplicaciones', 'Aplicaciones', 'BUENAS IDEAS.<br>MENOS COMPLICACIONES.', 'Un espacio para las herramientas de Veltora Studio. Descubre nuestros lanzamientos y encuentra toda su información en un mismo lugar.')
     for item in CATALOG:
         product(item)
+        for key, sections in item.get('documents', {}).items():
+            policy_page(item, key, sections)
     contact()
     privacy()
     page('404.html', 'Página no encontrada', 'Vuelve a explorar los juegos y aplicaciones de Veltora Studio.', f'<div class="wrap"><section class="page-intro"><div class="eyebrow">ERROR / 404</div><h1>ESTA RUTA<br>NO ESTÁ EN EL MAPA.</h1><p class="lead">Vuelve al inicio para descubrir nuestros juegos y aplicaciones.</p><div class="actions">{button(BASE, "VOLVER AL INICIO", True)}</div></section></div>')
-    urls = ['', 'juegos/', 'aplicaciones/', 'contacto/', 'privacidad/'] + [item['category']+'/'+item['slug']+'/' for item in CATALOG]
+    urls = ['', 'juegos/', 'aplicaciones/', 'contacto/', 'privacidad/']
+    for item in CATALOG:
+        urls.append(product_path(item))
+        urls.extend(product_path(item) + POLICIES[key][0] + '/' for key in item.get('documents', {}))
     put('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+PUBLIC+url+'</loc></url>' for url in urls)+'</urlset>')
     put('robots.txt', 'User-agent: *\nAllow: /\nSitemap: '+PUBLIC+'sitemap.xml')
     put('app-ads.txt', 'google.com, pub-1246957925783081, DIRECT, f08c47fec0942fa0')
