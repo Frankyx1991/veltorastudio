@@ -37,9 +37,22 @@ En Settings → Pages elegir **Deploy from a branch**, rama **main**, carpeta **
 - `assets/site.css`, `assets/site.js`: diseño responsive y búsqueda local.
 - `assets/fonts/`: Oxanium, alojada localmente, con su licencia OFL.
 - `juegos/`, `aplicaciones/`: catálogos y fichas.
-- `contacto/`, `privacidad/`: contacto y privacidad de la web.
+- `contacto/`, `privacidad/`: directorio de soporte y políticas por producto, y privacidad de la web del estudio.
 
 Para añadir un juego o una aplicación, añadir su registro al catálogo con slug único, categoría, imágenes, estado y políticas propias; después ejecutar `python scripts/build_site.py` y guardar también los HTML generados. Ninguna descarga, estado de publicación o política se inventa a partir de proyectos privados.
+
+### Soporte y políticas por producto
+
+El mismo registro genera los enlaces de su ficha y de **Soporte y políticas**. Indica `support_subject` y una política de privacidad. Añade eliminación de cuenta o datos, cancelación y reembolsos, y términos del servicio según las funciones que ofrezca el producto.
+
+| Documento | URL externa HTTPS | Clave en `documents` | Ruta bajo la ficha |
+| --- | --- | --- | --- |
+| Privacidad | `privacy_url` | `privacy` | `privacidad/` |
+| Cancelación y reembolsos | `cancellation_url` | `cancellation` | `cancelacion/` |
+| Eliminar cuenta o datos | `deletion_url` | `deletion` | `eliminar-datos/` |
+| Términos del Servicio | `terms_url` | `terms` | `terminos/` |
+
+Elige una fuente por documento. Para alojarlo en el portal, añade en `documents` una lista de secciones con `title`, `paragraphs` y, si corresponde, `links` con `label` y `url`. La página y su entrada en el sitemap se generan con el resto del sitio. La guía de cancelación de EvoPuzzle sirve como ejemplo.
 
 EvoPuzzle figura en prueba cerrada. Aplicaciones muestra un estado vacío honesto hasta disponer de un lanzamiento. La web usa recursos locales, sin analítica, anuncios, formularios de recogida de datos ni librerías de terceros en ejecución. La búsqueda funciona en el navegador y el catálogo sigue siendo accesible sin JavaScript. Los efectos respetan la preferencia de movimiento reducido.
 

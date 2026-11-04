@@ -41,6 +41,31 @@
     ],
     "privacy_url": "https://evopuzzle-privacidad-veltorastudio.franky91-91.chatgpt.site/",
     "deletion_url": "https://evopuzzle-privacidad-veltorastudio.franky91-91.chatgpt.site/eliminar-datos/",
+    "documents": {
+      "cancellation": [
+        {
+          "title": "Cancelar la renovación del Club",
+          "paragraphs": [
+            "Abre Suscripciones de Google Play con la cuenta con la que compraste el Club. Selecciona EvoPuzzle, pulsa Cancelar suscripción y sigue las instrucciones hasta que Google Play confirme la cancelación.",
+            "La cancelación detiene la próxima renovación. Puedes seguir usando las ventajas del Club durante el periodo que ya has pagado. Google Play indica la fecha de finalización.",
+            "Si vas a desinstalar EvoPuzzle o eliminar tu cuenta del juego, gestiona también la cancelación en Google Play para detener la renovación."
+          ],
+          "links": [
+            {"label": "Abrir mis suscripciones de Google Play", "url": "https://play.google.com/store/account/subscriptions"},
+            {"label": "Ver la ayuda oficial de cancelación", "url": "https://support.google.com/googleplay/answer/7018481?hl=es"}
+          ]
+        },
+        {
+          "title": "Pedir un reembolso",
+          "paragraphs": [
+            "Si quieres pedir la devolución de un cobro por una suscripción o por una compra dentro del juego, consulta las opciones de reembolso de Google Play. El procedimiento depende de la compra y del país o región. Puedes contactar con Veltora Studio si necesitas ayuda con la compra."
+          ],
+          "links": [
+            {"label": "Consultar o solicitar un reembolso en Google Play", "url": "https://support.google.com/googleplay/answer/15574897?hl=es"}
+          ]
+        }
+      ]
+    },
     "support_subject": "Asistencia EvoPuzzle",
     "test_subject": "Participar en las pruebas de EvoPuzzle",
     "theme": "Avatares",
