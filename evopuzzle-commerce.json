@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "package_name": "com.franky.evopuzzle",
-  "revision": 3,
+  "revision": 4,
   "billing_enabled": true,
   "verification_url": "https://evopuzzle-veltorastudio.duckdns.org/verify",
-  "ads_test_mode": true
+  "ads_test_mode": false
 }
