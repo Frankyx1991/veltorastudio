@@ -248,6 +248,7 @@ def main():
         ET.SubElement(ET.SubElement(sitemap, 'url'), 'loc').text = url
     ET.indent(sitemap)
     put('sitemap.xml', ET.tostring(sitemap, encoding='utf-8', xml_declaration=True).decode('utf-8'))
+    put('sitemap.txt', '\n'.join(urls))
     put('robots.txt', 'User-agent: *\nAllow: /\nSitemap: '+PUBLIC+'sitemap.xml')
     put('app-ads.txt', 'google.com, pub-1246957925783081, DIRECT, f08c47fec0942fa0')
     put('.nojekyll', '')
