@@ -54,7 +54,7 @@ El mismo registro genera los enlaces de su ficha y de **Soporte y políticas**. 
 
 Elige una fuente por documento. Para alojarlo en el portal, añade en `documents` una lista de secciones con `title`, `paragraphs` y, si corresponde, `links` con `label` y `url`. La página y su entrada en el sitemap se generan con el resto del sitio. La guía de cancelación de EvoPuzzle sirve como ejemplo.
 
-EvoPuzzle figura en prueba cerrada. Aplicaciones muestra un estado vacío honesto hasta disponer de un lanzamiento. La web usa recursos locales, sin analítica, anuncios, formularios de recogida de datos ni librerías de terceros en ejecución. La búsqueda funciona en el navegador y el catálogo sigue siendo accesible sin JavaScript. Los efectos respetan la preferencia de movimiento reducido.
+EvoPuzzle está disponible en Google Play. El campo `store_url` del catálogo enlaza con la ficha de descarga. Aplicaciones muestra un estado vacío honesto hasta disponer de un lanzamiento. La web usa recursos locales, sin analítica, anuncios, formularios de recogida de datos ni librerías de terceros en ejecución. La búsqueda funciona en el navegador y el catálogo sigue siendo accesible sin JavaScript. Los efectos respetan la preferencia de movimiento reducido.
 
 ## AdMob y raíz del dominio
 
