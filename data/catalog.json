@@ -21,7 +21,6 @@
         "caption": "Menú y avatar"
       }
     ],
-    "privacy_url": "https://evopuzzle-privacidad-veltorastudio.franky91-91.chatgpt.site/",
     "deletion_url": "https://evopuzzle-privacidad-veltorastudio.franky91-91.chatgpt.site/eliminar-datos/",
     "documents": {
       "cancellation": [
@@ -33,8 +32,14 @@
             "Si vas a desinstalar EvoPuzzle o eliminar tu cuenta del juego, gestiona también la cancelación en Google Play para detener la renovación."
           ],
           "links": [
-            {"label": "Abrir mis suscripciones de Google Play", "url": "https://play.google.com/store/account/subscriptions"},
-            {"label": "Ver la ayuda oficial de cancelación", "url": "https://support.google.com/googleplay/answer/7018481?hl=es"}
+            {
+              "label": "Abrir mis suscripciones de Google Play",
+              "url": "https://play.google.com/store/account/subscriptions"
+            },
+            {
+              "label": "Ver la ayuda oficial de cancelación",
+              "url": "https://support.google.com/googleplay/answer/7018481?hl=es"
+            }
           ]
         },
         {
@@ -43,7 +48,209 @@
             "Si quieres pedir la devolución de un cobro por una suscripción o por una compra dentro del juego, consulta las opciones de reembolso de Google Play. El procedimiento depende de la compra y del país o región. Puedes contactar con Veltora Studio si necesitas ayuda con la compra."
           ],
           "links": [
-            {"label": "Consultar o solicitar un reembolso en Google Play", "url": "https://support.google.com/googleplay/answer/15574897?hl=es"}
+            {
+              "label": "Consultar o solicitar un reembolso en Google Play",
+              "url": "https://support.google.com/googleplay/answer/15574897?hl=es"
+            }
+          ]
+        }
+      ],
+      "privacy": [
+        {
+          "title": "Información de esta política",
+          "paragraphs": [
+            "Última actualización del texto: 29 de octubre de 2026. Aplicación Android: com.franky.evopuzzle.",
+            "Cómo se tratan los datos al jugar a EvoPuzzle, utilizar sus servicios y contactar con la asistencia."
+          ]
+        },
+        {
+          "title": "1. Responsable y contacto",
+          "paragraphs": [
+            "EvoPuzzle es un juego de Veltora Studio. El responsable de los tratamientos propios descritos aquí es Francisco Javier Ruiz Vidal, en España. Esta política comprende la aplicación Android com.franky.evopuzzle, sus funciones opcionales y las comunicaciones de asistencia.",
+            "Privacidad y asistenciasoporte.veltorastudio@gmail.com",
+            "Puedes jugar sin crear una cuenta. La disponibilidad de anuncios, pagos y nube depende de la versión, la configuración del servicio y tu dispositivo. Explicamos cada tratamiento por separado para que puedas decidir qué funciones utilizar."
+          ]
+        },
+        {
+          "title": "2. Partida, perfil y almacenamiento local",
+          "paragraphs": [
+            "Perfil y progreso Nombres que eliges para jugador y avatar, avatares y sus niveles, aspectos, accesorios, estadísticas, monedas, herramientas, mejoras, colección, insignias, misiones, cofres, puntuaciones, récords, niveles y tiempo de juego. Preferencias Idioma, sonido, brillo del juego, animaciones, tutoriales, recordatorios y opciones de accesibilidad. El idioma del dispositivo puede determinar el idioma inicial. Diagnóstico limitado Errores técnicos y acciones recientes, versión del juego y de Android, modelo del dispositivo y, cuando Android lo permite, datos de cierres anteriores de esta aplicación. Los informes de asistencia se describen más abajo.",
+            "Estos datos se guardan inicialmente en el dispositivo para mantener tu partida. No publicamos tu perfil ni tus informes de asistencia. El registro mundial de nombres y las funciones sociales remotas están desactivados en la configuración distribuida; si se ofrece una función pública nueva, se informará antes de usarla.",
+            "EvoPuzzle no solicita contactos, cámara, micrófono, SMS ni ubicación GPS para jugar. Los proveedores de publicidad pueden inferir una ubicación aproximada a partir de la dirección IP. La protección y las posibles copias del sistema dependen también de Android y de los ajustes del dispositivo."
+          ]
+        },
+        {
+          "title": "3. Cuenta opcional y guardado en la nube",
+          "paragraphs": [
+            "Cuando el servicio esté habilitado, Ajustes > Cuenta y progreso permite acceder con Google o mediante un código enviado a tu correo. Si el juego indica que la nube no está disponible, el acceso permanece deshabilitado y el progreso se conserva localmente. No necesitas iniciar sesión para jugar.",
+            "Si eliges crear o usar una cuenta, el servicio trata tu correo electrónico, un identificador interno de cuenta y, para Google, el identificador que permite reconocer la identidad autenticada. No solicitamos ni recibimos la contraseña de tu cuenta de Google o de tu correo. Se emplean códigos temporales y credenciales de sesión para autenticarte y proteger el acceso.",
+            "El servidor guarda la copia de progreso que sincronizas, su revisión y fecha de actualización, y las asociaciones necesarias con la instalación. Esa copia puede incluir los nombres, monedas, niveles, compras y demás contenido de tu partida. Se utiliza para recuperar el progreso y gestionar conflictos entre dispositivos; las monedas de dos copias no se suman. El juego puede conservar una copia local recuperable antes de sustituir la partida.",
+            "El servidor de cuentas, su proveedor de alojamiento, el servicio que entrega los códigos por correo y Google cuando lo eliges intervienen solo en las funciones correspondientes. Las conexiones externas de cuenta requieren HTTPS. La dirección del servicio depende de la configuración de la instalación; puedes solicitar al contacto anterior información sobre el servicio que utiliza tu versión.",
+            "Cerrar sesión no elimina tu cuenta. Para eliminarla, utiliza «Eliminar cuenta» cuando hayas iniciado sesión o solicita la eliminación desde esta página de eliminación de cuentas y datos. Puede ser necesario volver a verificar tu identidad. Eliminar la cuenta de EvoPuzzle no elimina tu cuenta de Google ni tu buzón de correo."
+          ],
+          "links": [
+            {
+              "label": "esta página de eliminación de cuentas y datos",
+              "url": "https://evopuzzle-privacidad-veltorastudio.franky91-91.chatgpt.site/eliminar-datos/"
+            }
+          ]
+        },
+        {
+          "title": "4. Anuncios y preferencias de privacidad",
+          "paragraphs": [
+            "La versión gratuita integra Google AdMob para banners en la parte superior e inferior, vídeos recompensados e intersticiales. Los anuncios recompensados se solicitan al elegir su recompensa; los demás formatos pueden aparecer durante el uso del juego cuando están disponibles. Los banners reservan espacio para mantener accesibles los controles.",
+            "Al utilizar publicidad, el SDK de Google puede recoger y compartir con sus servicios dirección IP, identificadores publicitarios o del dispositivo, interacciones con la aplicación y los anuncios, y datos técnicos de diagnóstico y rendimiento. Sirven para mostrar y medir publicidad, analizar su funcionamiento y detectar fraude o abuso. La IP puede indicar una ubicación aproximada. Los identificadores y el tipo de anuncio dependen de la región, los permisos y las preferencias aplicables.",
+            "Cuando corresponde, Google UMP consulta las necesidades de privacidad y muestra el formulario aplicable. Ajustes > Privacidad > Preferencias de privacidad permite modificar la elección cuando el servicio ofrece esa opción. Puedes seguir jugando si la consulta no se completa. En la versión 0.9.43 y posteriores, un fallo o una respuesta pendiente de privacidad mantiene bloqueadas las nuevas solicitudes de anuncios reales hasta completar una comprobación válida.",
+            "Rechazar personalización no significa necesariamente ausencia de todos los anuncios: el proveedor determina si puede ofrecer publicidad limitada conforme a tus opciones. No es necesario comprar para elegir tus preferencias. También puedes gestionar el identificador de publicidad en los ajustes de Android. Retirar una elección no afecta al tratamiento anterior realizado válidamente.",
+            "Una suscripción vigente del Club que incluya la eliminación de anuncios retira los banners, intersticiales y vídeos del juego durante su vigencia. Esto no borra información que el proveedor ya haya recibido. Las compras solo están disponibles cuando Google Play y el servicio de verificación están configurados.",
+            "Durante las pruebas pueden utilizarse los anuncios de demostración de Google. La configuración del estudio puede cambiar entre anuncios de prueba y reales sin reinstalar el juego; el modo real mantiene las comprobaciones de privacidad anteriores. La activación depende también de la disponibilidad y aprobación de AdMob. Cuando se retiran los banners por una suscripción vigente, el juego recupera el espacio que ocupaban.",
+            "Privacidad de Google · Datos del SDK de anuncios de Google · Controles publicitarios de Google"
+          ],
+          "links": [
+            {
+              "label": "Privacidad de Google",
+              "url": "https://policies.google.com/privacy"
+            },
+            {
+              "label": "Datos del SDK de anuncios de Google",
+              "url": "https://developers.google.com/admob/android/next-gen/privacy/play-data-disclosure?hl=es-419"
+            },
+            {
+              "label": "Controles publicitarios de Google",
+              "url": "https://myadcenter.google.com/"
+            }
+          ]
+        },
+        {
+          "title": "5. Compras y suscripciones de Google Play",
+          "paragraphs": [
+            "Cuando estén disponibles, las compras de monedas, avatares, aspectos y accesorios, así como las suscripciones, se tramitan mediante Google Play. El juego muestra el precio y las condiciones que devuelve la tienda. No recibimos el número de tarjeta ni su código de seguridad.",
+            "Para validar y entregar contenido, restaurar derechos y prevenir duplicados o fraude se pueden tratar el identificador del producto, token de compra, estado, cantidad y vigencia, y un identificador aleatorio de instalación. Si utilizas una cuenta, la verificación puede asociarse a ella para mantener tus derechos. El servidor de verificación recibe los datos necesarios por HTTPS y consulta Google Play.",
+            "La verificación solo se utiliza cuando el servicio está configurado y se solicita o restaura una compra. El servidor conserva referencias y hashes de tokens para reconocer reintentos y evitar entregas duplicadas; los datos de la compra se contrastan con Google antes de entregar el contenido. Los objetos que todavía no estén disponibles en Google Play no se ofrecen como una compra activa.",
+            "Los derechos y referencias de compra se conservan en el dispositivo y, cuando corresponde, en el servidor de verificación. No se incluyen deliberadamente tokens de pago ni credenciales de sesión en el informe técnico de asistencia. Google mantiene sus propios registros y obligaciones de pago.",
+            "Si el producto es una suscripción con renovación automática, puedes cancelarla en Google Play y conservar el acceso hasta finalizar el periodo pagado según sus condiciones. Eliminar la cuenta, borrar datos o desinstalar EvoPuzzle no cancela una suscripción ni solicita un reembolso.",
+            "Gestionar o cancelar suscripciones en Google Play"
+          ],
+          "links": [
+            {
+              "label": "Gestionar o cancelar suscripciones en Google Play",
+              "url": "https://play.google.com/store/account/subscriptions"
+            }
+          ]
+        },
+        {
+          "title": "6. Asistencia, contacto e informes de errores",
+          "paragraphs": [
+            "El juego conserva un registro local acotado para preparar informes: hasta 12 tipos de error y 24 acciones recientes. El diagnóstico Android puede incluir hasta 8 cierres de esta aplicación y consulta un periodo reciente de hasta siete días. No grabamos tu pantalla ni el contenido de otras aplicaciones. El registro evita copiar mensajes libres del motor, variables, contraseñas o recibos.",
+            "El informe puede incluir versión del juego y del sistema, modelo, nivel, modo, tamaño del tablero, puntos y turnos, tipo y nivel de avatar, tutoriales, opciones de audio y notificaciones, estado de anuncios, funciones y líneas de código afectadas, fechas y recuentos de errores, y datos técnicos de cierres como motivo y memoria utilizada. No se envía automáticamente a Veltora Studio.",
+            "Desde la versión 0.9.43 puedes revisar el contenido del informe antes de enviarlo. Solo se transmite después de tu confirmación. Tu comentario es opcional y se incluye si lo escribes; evita contraseñas, datos bancarios u otra información innecesaria. No se exige tu correo personal para enviar el informe integrado.",
+            "El envío usa FormSubmit para entregar el informe al correo soporte.veltorastudio@gmail.com, alojado en Gmail. Se añade una referencia aleatoria para identificarlo. FormSubmit y los proveedores de conexión y correo pueden tratar IP y datos técnicos para prestar el servicio y prevenir abuso.",
+            "Si falla el envío, el informe puede quedar guardado en el dispositivo para reintentarlo de forma voluntaria. En las versiones que ofrecen «Borrar diagnósticos locales» puedes eliminar ese informe pendiente y los registros locales, incluidos sus respaldos. Esto no retira un mensaje que ya haya llegado al destinatario. Un pequeño marcador local evita reimportar los mismos cierres de Android y se mantiene el límite temporal de envío para prevenir abuso.",
+            "El botón Contacto abre tu aplicación de correo con la dirección del estudio: no envía un mensaje por sí solo. Si decides enviarlo, recibiremos tu dirección de correo, el texto y los adjuntos que elijas. Utilizamos esas comunicaciones para atenderte e investigar el problema.",
+            "Privacidad de FormSubmit · Privacidad de Gmail y Google"
+          ],
+          "links": [
+            {
+              "label": "Privacidad de FormSubmit",
+              "url": "https://formsubmit.co/privacy.pdf"
+            },
+            {
+              "label": "Privacidad de Gmail y Google",
+              "url": "https://policies.google.com/privacy"
+            }
+          ]
+        },
+        {
+          "title": "7. Recordatorios y permisos",
+          "paragraphs": [
+            "Los recordatorios se programan en el dispositivo y pueden usar el nombre de tu avatar. No necesitan enviar tu perfil a un servicio de notificaciones push. Android puede restablecer su programación después de reiniciar el móvil.",
+            "La activación es opcional. Puedes cambiarla en Ajustes > Notificaciones o retirar el permiso en Android. El acceso a Internet se utiliza para los servicios que requieran conexión, como anuncios, asistencia, pagos y nube cuando estén disponibles; no equivale a permiso para acceder a tus contactos o archivos personales."
+          ]
+        },
+        {
+          "title": "8. Finalidades y bases del tratamiento",
+          "paragraphs": [
+            "Prestar el juego, mantener la partida y entregar contenido: ejecución del servicio o del contrato que solicitas.",
+            "Crear la cuenta y recuperar el progreso si eliges esa función: prestación del servicio solicitado y medidas necesarias para autenticarte y protegerlo.",
+            "Publicidad y preferencias para las que se exige autorización: consentimiento cuando corresponda, conforme al formulario y al servicio aplicable.",
+            "Asistencia solicitada, estabilidad, seguridad y prevención de fraude: atención de tu solicitud y, cuando sea aplicable, interés legítimo en mantener un servicio seguro, limitado a lo necesario.",
+            "Atender obligaciones legales y reclamaciones: cumplimiento normativo y defensa de derechos cuando corresponda.",
+            "Veltora Studio no comercializa tu partida ni tus informes de asistencia. El tratamiento publicitario por Google y las transferencias a otros proveedores se describen expresamente aquí. No utilizamos tu progreso para adoptar decisiones automatizadas con efectos jurídicos o de importancia equivalente sobre ti."
+          ]
+        },
+        {
+          "title": "9. Destinatarios, transferencias y seguridad",
+          "paragraphs": [
+            "Los destinatarios dependen de las funciones utilizadas: Google para publicidad y consentimiento, acceso con Google, Google Play y correo Gmail; FormSubmit para el envío de informes; y los proveedores técnicos que alojen el servicio de cuentas, la entrega de códigos y la verificación de compras cuando estén activados. Los proveedores pueden tratar datos como encargados o conforme a sus propias responsabilidades, según el servicio.",
+            "Desde la versión 0.9.49, Android puede consultar al iniciar y periódicamente un archivo público de configuración de Veltora Studio alojado en GitHub/GitHubusercontent. Sirve para gestionar la disponibilidad de compras y el modo de anuncios. La petición transmite los datos técnicos habituales de conexión, como dirección IP y cabeceras; no envía a GitHub tu partida, correo, recibos ni tokens de compra. La consulta no crea una cuenta de GitHub y no añade publicidad ni seguimiento web a esta página. Privacidad de GitHub.",
+            "También puede ser necesario comunicar información por obligación legal, para atender una solicitud válida de una autoridad o proteger derechos frente a fraude. No publicamos los informes de asistencia ni ponemos tu partida a disposición de otros jugadores como parte del guardado en la nube.",
+            "Algunos servicios pueden tratar datos fuera de España o del Espacio Económico Europeo. Cuando resulte aplicable se utilizarán mecanismos de transferencia admitidos por la normativa, como decisiones de adecuación o cláusulas contractuales y sus garantías complementarias. Puedes pedir información sobre el tratamiento y el proveedor que te afecte a nuestro contacto de privacidad.",
+            "Los servicios externos de cuenta, verificación, publicidad y entrega de informes utilizan conexiones protegidas en tránsito. Las credenciales y el progreso locales quedan sujetos a la protección del dispositivo; se restringe el contenido de los registros. No podemos garantizar una seguridad absoluta. Los servicios de terceros tienen sus propios controles y políticas enlazados en esta página."
+          ],
+          "links": [
+            {
+              "label": "Privacidad de GitHub",
+              "url": "https://docs.github.com/es/site-policy/privacy-policies/github-general-privacy-statement"
+            }
+          ]
+        },
+        {
+          "title": "10. Conservación",
+          "paragraphs": [
+            "Partida y preferencias locales: mientras se conserven los datos de la app, salvo que los sustituyas o borres. Las copias recuperables también deben eliminarse al borrar todo el almacenamiento.",
+            "Diagnósticos e informe pendiente: registros de tamaño limitado hasta su sustitución, confirmación o eliminación local. Las versiones con el nuevo control permiten borrarlos desde Privacidad.",
+            "Cuenta y progreso sincronizado: mientras mantengas la cuenta o sean necesarios para el servicio solicitado; se eliminan al tramitar una solicitud válida, salvo la información mínima que legalmente deba conservarse.",
+            "Autenticación: los códigos y retos del servicio incluido caducan a los 10 minutos y las sesiones a los 30 días. La caducidad invalida el acceso; los registros temporales se depuran en las operaciones de mantenimiento del servicio. Cerrar sesión revoca la sesión correspondiente.",
+            "Asistencia y correos: durante la atención y el seguimiento necesario; después se eliminan o anonimizan, salvo conservación justificada por obligaciones legales o reclamaciones.",
+            "Compras: mientras resulte necesario para entregar y restaurar derechos, prevenir fraude o cumplir obligaciones legales. Los registros propios de Google están sujetos a sus condiciones.",
+            "Si una eliminación requiere conservar datos concretos por obligación legal, seguridad o una reclamación, explicaremos el motivo y limitaremos el acceso y el uso a esa finalidad. No conservaremos toda una cuenta indefinidamente para una finalidad limitada. Los proveedores aplican además los plazos y controles de sus propios servicios."
+          ]
+        },
+        {
+          "title": "11. Eliminar cuentas, datos y ejercer tus derechos",
+          "paragraphs": [
+            "Abrir la página de eliminación de cuentas y datos de EvoPuzzle. Está disponible sin instalar el juego ni iniciar sesión en esta web.",
+            "Cuenta y nube",
+            "Si utilizas una cuenta, abre Ajustes > Cuenta y progreso > Eliminar cuenta. El servicio puede pedir autenticación reciente y confirmación. La eliminación comprende la cuenta de EvoPuzzle, sus identidades vinculadas, sesiones y copia de progreso del servicio; el juego también intenta retirar la partida local asociada y su copia recuperable. Si algún archivo local no puede borrarse, se informa para que completes el borrado desde Android.",
+            "Solicitarlo desde fuera del juego",
+            "Escribe a soporte.veltorastudio@gmail.com con el asunto «Eliminar cuenta y datos - EvoPuzzle». Indica si deseas eliminar tu cuenta, informes de asistencia u otros datos; para una cuenta, utiliza de preferencia el correo vinculado y, para un informe, su referencia o fecha aproximada. No envíes contraseñas, códigos de acceso ni el número completo de una tarjeta.",
+            "Solo solicitaremos lo necesario para localizar la información y verificar tu legitimación. Atenderemos la petición sin dilación indebida y dentro de los plazos legales aplicables; te comunicaremos el resultado y cualquier motivo justificado de conservación o necesidad de información adicional. Si un proveedor procesa datos por nuestra cuenta, trasladaremos la solicitud cuando corresponda.",
+            "Datos del dispositivo",
+            "Desde la versión 0.9.43, Ajustes > Privacidad > Borrar diagnósticos locales elimina registros técnicos e informes pendientes, sin reiniciar la partida. Para borrar todo, utiliza Android > Ajustes > Aplicaciones > EvoPuzzle > Almacenamiento > Borrar datos. Las denominaciones varían según el dispositivo. Revisa también las copias de seguridad del sistema que pudieras mantener.",
+            "«Nueva partida» y cerrar sesión no equivalen a eliminar todos los datos. Borrar el almacenamiento o desinstalar no borra una copia en la nube, correos ya enviados ni registros propios de Google Play. Eliminar una cuenta no cancela una suscripción. Puedes solicitar la eliminación de informes por separado sin perder el progreso.",
+            "Otros derechos",
+            "Cuando la normativa lo reconozca, puedes pedir acceso, rectificación, supresión, limitación, oposición y portabilidad, o retirar un consentimiento, mediante el mismo contacto. También puedes reclamar ante la Agencia Española de Protección de Datos o tu autoridad de control competente. Para cambiar el consentimiento publicitario utiliza los controles de Privacidad del juego cuando estén disponibles."
+          ],
+          "links": [
+            {
+              "label": "Abrir la página de eliminación de cuentas y datos de EvoPuzzle",
+              "url": "https://evopuzzle-privacidad-veltorastudio.franky91-91.chatgpt.site/eliminar-datos/"
+            },
+            {
+              "label": "Agencia Española de Protección de Datos",
+              "url": "https://www.aepd.es/"
+            }
+          ]
+        },
+        {
+          "title": "12. Menores de edad",
+          "paragraphs": [
+            "Si eres menor de edad, consulta con tu madre, padre o tutor antes de realizar compras, crear una cuenta o enviar información personal a asistencia. Deben respetarse las restricciones, permisos y controles familiares de Google Play y los requisitos de consentimiento que correspondan en tu país.",
+            "Si una madre, padre o tutor considera que hemos recibido datos personales de un menor que deban eliminarse, puede escribir al contacto de privacidad para que investiguemos y tramitemos la solicitud. La clasificación de la tienda no sustituye las autorizaciones que legalmente resulten necesarias."
+          ]
+        },
+        {
+          "title": "13. Esta web y cambios de la política",
+          "paragraphs": [
+            "Esta página y la de eliminación no incluyen anuncios, formularios de recogida de datos, herramientas de analítica propias, recursos externos incrustados ni cookies publicitarias añadidas por Veltora Studio. Sus enlaces de correo abren tu aplicación de correo; la información se transmite cuando decides enviar el mensaje. El alojamiento de GitHub Pages puede tratar IP y otros datos técnicos para servir y proteger la web.",
+            "Publicaremos las actualizaciones en esta misma dirección e indicaremos su fecha. Los cambios relevantes se comunicarán por los medios oportunos y se solicitará autorización adicional cuando corresponda. La política no activa servicios que permanezcan deshabilitados en tu instalación.",
+            "Versión de la política: 2.0 · 26 de octubre de 2026. Revisión del proyecto EvoPuzzle 0.9.43; los controles nuevos se identifican en el texto para las instalaciones anteriores."
+          ],
+          "links": [
+            {
+              "label": "Privacidad del alojamiento GitHub Pages",
+              "url": "https://docs.github.com/es/site-policy/privacy-policies/github-general-privacy-statement"
+            }
           ]
         }
       ]

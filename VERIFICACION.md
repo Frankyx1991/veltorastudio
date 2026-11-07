@@ -36,3 +36,11 @@ Nuevo constructor: `python scripts/build_cloudflare.py`, salida `dist`, web prev
 Comprobaciones locales: ejecución de ambos constructores, siete HTML con un H1 e identificadores únicos, 151 enlaces/recursos/anclas resueltos, fuente de CSS, sitemap XML, robots, privacidad de Cloudflare y contenido de app-ads.txt. La salida excluye scripts, datos de configuración e historial Git. PowerShell actualizado para comprobar Cloudflare sin crear repositorios; no ejecutado en Windows.
 
 Pendiente: Save and Deploy en la cuenta de Cloudflare del usuario, confirmar la dirección pública, actualizar la web del desarrollador en Google Play y solicitar la comprobación en AdMob. No se afirma que Google haya verificado el archivo.
+
+## Política de EvoPuzzle y marca OAuth — 07/11/2026
+
+La política de privacidad específica de EvoPuzzle se incorpora al catálogo y se publica bajo `juegos/evopuzzle/privacidad/`, en el mismo dominio que la página principal del juego. Se preservan los trece apartados del texto que estaba publicado; la referencia al alojamiento de esta copia cambia a GitHub Pages y se añade el enlace de privacidad del proveedor. La página de eliminación existente conserva su dirección.
+
+Se actualizan los enlaces de la ficha, contacto y directorio de privacidad, además de los sitemaps XML y de texto. Se comprueban la conservación de todos los párrafos, los enlaces locales, la URL canónica y la regeneración del portal. El archivo de verificación de Google y el resto de los recursos del repositorio se conservan.
+
+El estado de producción de OAuth, la propiedad acreditada en Search Console y la verificación de marca son comprobaciones distintas. Quedan pendientes la acreditación de la propiedad de la web con una cuenta propietaria o editora del proyecto Google Cloud, el cambio de la URL de privacidad en su configuración y la nueva revisión por Google. Esta modificación web no abre las cuentas del piloto de la Raspberry.

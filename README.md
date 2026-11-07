@@ -64,4 +64,4 @@ La solución elegida es publicar este mismo repositorio en Cloudflare Pages. El 
 
 `scripts/Restaurar-AppAds.ps1` comprueba el archivo de Cloudflare sin crear repositorios. El material antiguo de `infrastructure/domain-root/` queda como referencia histórica y no se utiliza en esta publicación. La disponibilidad del archivo y su verificación por Google son comprobaciones distintas; no se presenta AdMob como verificado sin revisar su estado.
 
-La política de EvoPuzzle y su página de eliminación siguen en sus direcciones específicas del Site; la privacidad de la web enlaza ambas. Cada nuevo producto necesita sus propios textos legales.
+La política de EvoPuzzle se publica en `juegos/evopuzzle/privacidad/`, dentro del mismo dominio que su ficha. Su texto se mantiene en `documents.privacy` de `data/catalog.json` y se genera con el resto del portal y del sitemap. La página de eliminación conserva su dirección específica del Site. Cada nuevo producto necesita sus propios textos legales.
